@@ -8,14 +8,17 @@ import Products from "../Products/Products";
 
 const Home = () => {
     const allCoffee = useLoaderData();
+    console.log(allCoffee);
+    console.log(allCoffee);
+    console.log(allCoffee);
 
     return (
         <div>
             <Navbar></Navbar>
             <Banner></Banner>
             <Category></Category>
-            <Products 
-            allCoffee={allCoffee}
+            <Products
+                allCoffee={allCoffee}
             ></Products>
             <Follow></Follow>
             <Footer></Footer>

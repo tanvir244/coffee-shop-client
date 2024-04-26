@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Coffee from "../Coffee/Coffee";
 import { useState } from "react";
 
-const Products = ({allCoffee}) => {
+const Products = ({ allCoffee }) => {
     const [coffees, setCoffees] = useState(allCoffee);
 
     const bgImg = {
@@ -22,12 +22,17 @@ const Products = ({allCoffee}) => {
                 </Link>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                     {
-                        coffees.map(coffee => <Coffee
-                        key={coffee._id}
-                        coffee={coffee}
-                        coffees={coffees}
-                        setCoffees={setCoffees}
-                        ></Coffee>)
+                        Array.isArray(coffees) ? (
+                            coffees.map(coffee => <Coffee
+                                key={coffee._id}
+                                coffee={coffee}
+                                coffees={coffees}
+                                setCoffees={setCoffees}
+                            ></Coffee>
+                            )
+                        ) : (
+                            <p>No coffees available.</p>
+                        )
                     }
                 </div>
             </div>

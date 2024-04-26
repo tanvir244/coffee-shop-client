@@ -21,7 +21,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/addCoffee/${id}`, {
+                fetch(`https://coffee-shop-server-nu-one.vercel.app/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
